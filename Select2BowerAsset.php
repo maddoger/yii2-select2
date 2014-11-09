@@ -3,9 +3,15 @@
 namespace maddoger\widgets;
 
 use yii\web\AssetBundle;
+use Yii;
 
 class Select2BowerAsset extends AssetBundle
 {
+    /**
+     * @var string
+     */
+    public $language;
+
     /**
      * @inheritdoc
      */
@@ -33,4 +39,13 @@ class Select2BowerAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+
+    public function init()
+    {
+        parent::init();
+        if (!$this->language) {
+            $this->language = substr(Yii::$app->language, 0, 2);
+        }
+        $this->js[] = 'select2_locale_'.$this->language.'.js';
+    }
 }

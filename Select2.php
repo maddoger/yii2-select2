@@ -27,11 +27,6 @@ class Select2 extends InputWidget
     public $clientOptions;
 
     /**
-     * @var string
-     */
-    public $language;
-
-    /**
      * @var bool
      */
     public $registerCustomAsset = true;
@@ -82,13 +77,7 @@ class Select2 extends InputWidget
         $selector = $this->options['id'];
 
         $view = $this->getView();
-        $select2 = Select2Asset::register($view);
-        if (!$this->language) {
-            $this->language = substr(Yii::$app->language, 0, 2);
-        }
-        array_push($select2->js, "select2_locale_$this->language.js");
-
-
+        Select2BowerAsset::register($view);
         if ($this->registerCustomAsset) {
             Select2Asset::register($view);
         }
