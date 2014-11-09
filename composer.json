@@ -1,0 +1,23 @@
+{
+	"name": "maddoger/yii2-select2",
+	"description": "Yii2 Select2 Widget.",
+	"keywords": ["yii2", "extension", "widget"],
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"authors": [
+        {
+            "name": "Vitaliy Syrchikov",
+            "email": "maddoger@gmail.com"
+        }
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.0",
+		"yiisoft/yii2": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"maddoger\\widgets\\": ""
+		}
+	}
+}
