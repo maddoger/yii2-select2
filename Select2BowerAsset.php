@@ -46,6 +46,8 @@ class Select2BowerAsset extends AssetBundle
         if (!$this->language) {
             $this->language = substr(Yii::$app->language, 0, 2);
         }
-        $this->js[] = 'select2_locale_'.$this->language.'.js';
+        if ($this->language != 'en') {
+            $this->js[] = 'select2_locale_'.$this->language.'.js';
+        }
     }
 }
