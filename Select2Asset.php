@@ -4,31 +4,25 @@ namespace maddoger\widgets;
 
 use yii\web\AssetBundle;
 
-class Select2Assets extends AssetBundle
+class Select2Asset extends AssetBundle
 {
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@vendor/ivaynberg/select2';
-
-    /**
-     * @inheritdoc
-     */
     public $css = [
-        'select2.css',
-    ];
-    /**
-     * @inheritdoc
-     */
-
-    public $js = [
-        'select2.js',
+        'select2-custom.css',
     ];
 
     /**
      * @inheritdoc
      */
     public $depends = [
-        'yii\web\JqueryAsset',
+        'maddoger\widgets\Select2BowerAsset',
     ];
+
+    public function init()
+    {
+        $this->sourcePath = __DIR__.'/assets';
+        parent::init();
+    }
 }
