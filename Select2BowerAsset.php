@@ -29,7 +29,7 @@ class Select2BowerAsset extends AssetBundle
      */
 
     public $js = [
-        'select2.js',
+        'select2.min.js',
     ];
 
     /**

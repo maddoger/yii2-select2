@@ -5,6 +5,7 @@ namespace maddoger\widgets;
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\web\JsExpression;
 use yii\widgets\InputWidget;
 
 /**
@@ -30,6 +31,11 @@ class Select2 extends InputWidget
      * @var bool
      */
     public $registerCustomAsset = true;
+
+    /**
+     * @var string[] Events
+     */
+    public $clientEvents;
 
     /**
      * @inheritdoc
@@ -83,5 +89,14 @@ class Select2 extends InputWidget
         }
 
         $this->getView()->registerJs("$('#{$selector}').select2($clientOptions);");
+
+        if (!empty($this->clientEvents)) {
+            $js = [];
+            foreach ($this->clientEvents as $event => $handler) {
+                $js[] = "$('#{$selector}').on('{$event}', {$handler});";
+            }
+            $js = implode("\n", $js);
+            $view->registerJs($js);
+        }
     }
 }
