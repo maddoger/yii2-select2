@@ -10,7 +10,6 @@
             "email": "maddoger@gmail.com"
         }
 	],
-	"minimum-stability": "dev",
 	"require": {
 		"yiisoft/yii2": "*",
         "bower-asset/select2": "3.*@stable"
