@@ -30,7 +30,7 @@ class Select2 extends InputWidget
     /**
      * @var bool
      */
-    public $registerCustomAsset = true;
+    public $registerBootstrapAsset = true;
 
     /**
      * @var string[] Events
@@ -83,8 +83,9 @@ class Select2 extends InputWidget
         $selector = $this->options['id'];
 
         $view = $this->getView();
-        Select2BowerAsset::register($view);
-        if ($this->registerCustomAsset) {
+        if ($this->registerBootstrapAsset === true) {
+            Select2BootstrapAsset::register($view);
+        } else {
             Select2Asset::register($view);
         }
 
