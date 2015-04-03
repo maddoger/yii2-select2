@@ -1,22 +1,23 @@
 {
-	"name": "maddoger/yii2-select2",
-	"description": "Yii2 Select2 Widget.",
-	"keywords": ["yii2", "extension", "widget"],
-	"type": "yii2-extension",
-	"license": "BSD-3-Clause",
-	"authors": [
-        {
-            "name": "Vitaliy Syrchikov",
-            "email": "maddoger@gmail.com"
-        }
-	],
-	"require": {
-		"yiisoft/yii2": "*",
-        "bower-asset/select2": "3.*@stable"
-	},
-	"autoload": {
-		"psr-4": {
-			"maddoger\\widgets\\": ""
-		}
-	}
+  "name": "maddoger/yii2-select2",
+  "description": "Yii2 Select2 Widget.",
+  "keywords": ["yii2", "extension", "widget"],
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Vitaliy Syrchikov",
+      "email": "maddoger@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "bower-asset/select2": "3.*@stable|4.*@stable",
+    "bower-asset/select2-bootstrap-css": "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "maddoger\\widgets\\": ""
+    }
+  }
 }
