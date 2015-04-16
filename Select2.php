@@ -9,9 +9,7 @@ use yii\web\JsExpression;
 use yii\widgets\InputWidget;
 
 /**
- * DateTimeEditor Widget For Yii2 class file.
- *
- * @property array $plugins
+ * Select2 Widget For Yii2
  *
  * @author Vitaliy Syrchikov <maddoger@gmail.com>
  */
@@ -23,7 +21,7 @@ class Select2 extends InputWidget
     public $items;
 
     /**
-     * @var array
+     * @var array plugin options
      */
     public $clientOptions;
 
