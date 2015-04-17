@@ -23,7 +23,7 @@ class Select2 extends InputWidget
     /**
      * @var array plugin options
      */
-    public $clientOptions;
+    public $clientOptions = [];
 
     /**
      * @var bool
