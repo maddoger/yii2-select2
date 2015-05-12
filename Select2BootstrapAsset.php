@@ -14,7 +14,7 @@ class Select2BootstrapAsset extends AssetBundle
      * @inheritdoc
      */
     public $css = [
-        'select2-bootstrap.min.css'
+        'select2-bootstrap.css'
     ];
     /**
      * @inheritdoc
