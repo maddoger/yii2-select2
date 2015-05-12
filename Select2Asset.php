@@ -15,13 +15,13 @@ class Select2Asset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@bower/select2';
+    public $sourcePath = '@bower/select2/dist';
 
     /**
      * @inheritdoc
      */
     public $css = [
-        'select2.css',
+        'css/select2.min.css',
         //'select2-bootstrap.css',
     ];
     /**
@@ -29,7 +29,7 @@ class Select2Asset extends AssetBundle
      */
 
     public $js = [
-        'select2.min.js',
+        'js/select2.min.js',
     ];
 
     /**
@@ -47,7 +47,7 @@ class Select2Asset extends AssetBundle
             $this->language = substr(Yii::$app->language, 0, 2);
         }
         if ($this->language != 'en') {
-            $this->js[] = 'select2_locale_'.$this->language.'.js';
+            $this->js[] = 'js/i18n/'.$this->language.'.js';
         }
     }
 }
