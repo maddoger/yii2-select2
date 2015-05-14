@@ -36,11 +36,6 @@ class Select2 extends InputWidget
     public $clientEvents;
 
     /**
-     * @var bool
-     */
-    public $multiple = false;
-
-    /**
      * @inheritdoc
      * @throws \yii\base\InvalidConfigException
      */
@@ -62,28 +57,17 @@ class Select2 extends InputWidget
     public function run()
     {
         $this->registerClientScript();
-
-        if (
-            (isset($this->clientOptions['tags']) && $this->clientOptions['tags']) ||
-            (isset($this->options['multiple']) && $this->options['multiple'])
-        ) {
-            $this->multiple = true;
-        }
-
-        if ($this->multiple) {
-            $this->options['multiple'] = 'multiple';
-
-            if ($this->hasModel()) {
-                return Html::activeListBox($this->model, $this->attribute, $this->items, $this->options);
-            } else {
-                return Html::listBox($this->name, $this->value, $this->items, $this->options);
-            }
-        } else {
-
-            if ($this->hasModel()) {
+        if ($this->hasModel()) {
+            if ($this->items) {
                 return Html::activeDropDownList($this->model, $this->attribute, $this->items, $this->options);
             } else {
+                return Html::activeTextInput($this->model, $this->attribute, $this->options);
+            }
+        } else {
+            if ($this->items) {
                 return Html::dropDownList($this->name, $this->value, $this->items, $this->options);
+            } else {
+                return Html::textInput($this->name, $this->value, $this->options);
             }
         }
     }
